@@ -9,8 +9,6 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class AutomationPracticeForm extends TestBase {
 
-    public FormPage formPage = new FormPage();
-
     @Test
     void requiredFieldsFilling() {
         formPage.fillTestFormWithRequiredFields();
