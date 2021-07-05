@@ -6,47 +6,53 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class FormPage{
 
-    private SelenideElement userNumber = $("#userNumber");
-    private SelenideElement lastName = $("#lastName");
-    private SelenideElement userEmail = $("#userEmail");
-    private SelenideElement firstName = $("#firstName");
+    private SelenideElement USER_NUMBER = $("#userNumber");
+    private SelenideElement LAST_NAME = $("#lastName");
+    private SelenideElement USER_EMAIL = $("#userEmail");
+    private SelenideElement FIRST_NAME = $("#firstName");
+    private SelenideElement SUBMIT_BUTTON = $("#submit");
+    private int genderId = 1;
+    private SelenideElement GENDER_RADIO = $x("//label[contains(@for,'" + genderId + "')]");
+    private String firstName = "Test";
+    private String lastName = "User";
+    private String phone = "89001234567";
 
     public FormPage fillTestFormWithRequiredFields() {
-        fillFirstName("Test");
-        fillLastName("User");
-        setGender(1);
-        fillUserPhone("89001234567");
+        fillFirstName(firstName);
+        fillLastName(lastName);
+        setGender(genderId);
+        fillUserPhone(phone);
         return this;
     }
 
     public SubmitPage submitForm() {
-        $("#submit").click();
+        SUBMIT_BUTTON.click();
         return new SubmitPage();
     }
 
-    private FormPage setGender(int i) {
-        $x("//label[contains(@for,'" + i + "')]").click();
+    private FormPage setGender(int genderId) {
+        GENDER_RADIO.click();
         return this;
     }
 
     private FormPage fillUserPhone(String userPhone) {
-        userNumber.click();
-        userNumber.clear();
-        userNumber.sendKeys(userPhone);
+        USER_NUMBER.click();
+        USER_NUMBER.clear();
+        USER_NUMBER.sendKeys(userPhone);
         return this;
     }
 
     private FormPage fillLastName(String lastUserName) {
-        lastName.click();
-        lastName.clear();
-        lastName.sendKeys(lastUserName);
+        LAST_NAME.click();
+        LAST_NAME.clear();
+        LAST_NAME.sendKeys(lastUserName);
         return this;
     }
 
     private FormPage fillFirstName(String firstUserName) {
-        firstName.click();
-        firstName.clear();
-        firstName.sendKeys(firstUserName);
+        FIRST_NAME.click();
+        FIRST_NAME.clear();
+        FIRST_NAME.sendKeys(firstUserName);
         return this;
     }
 
@@ -62,9 +68,9 @@ public class FormPage{
     }
 
     private FormPage fillEmail(String email) {
-        userEmail.click();
-        userEmail.clear();
-        userEmail.sendKeys(email);
+        USER_EMAIL.click();
+        USER_EMAIL.clear();
+        USER_EMAIL.sendKeys(email);
         return this;
     }
 }
