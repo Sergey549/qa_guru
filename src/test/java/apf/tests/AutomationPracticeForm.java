@@ -1,11 +1,13 @@
-package apf;
+package apf.tests;
 
+import apf.base.TestBase;
+import apf.pages.FormPage;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
-public class AutomationPracticeForm extends TestBase{
+public class AutomationPracticeForm extends TestBase {
 
     public FormPage formPage = new FormPage();
 

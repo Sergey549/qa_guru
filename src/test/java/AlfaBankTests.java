@@ -39,7 +39,7 @@ public class AlfaBankTests {
         depositWidget.click();
         int elements = widgets.size();
         System.out.println(elements);
-        Assert.assertEquals(elements, actualWidgetsQuantity);
+        Assert.assertEquals( actualWidgetsQuantity, elements);
     }
 
     @Test
