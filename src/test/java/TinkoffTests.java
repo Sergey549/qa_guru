@@ -1,6 +1,8 @@
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import org.junit.Assert;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -43,5 +45,9 @@ public class TinkoffTests {
         Assert.assertEquals("5 655 000", summaAfterDrug);
     }
 
+    @AfterEach
+    void tearDown(){
+        Selenide.closeWebDriver();
+    }
 
 }
