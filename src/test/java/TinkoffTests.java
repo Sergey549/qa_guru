@@ -19,7 +19,9 @@ public class TinkoffTests {
 
     @BeforeEach
     void setUp() {
-        Configuration.browserSize = "1400x3000";
+        Configuration.browserSize = "1024x768";
+        Configuration.browser = "chrome";
+        //Configuration.headless = true;
         open(tinkoffMain);
     }
 

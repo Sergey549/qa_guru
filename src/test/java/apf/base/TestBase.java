@@ -10,7 +10,9 @@ import static com.codeborne.selenide.Selenide.open;
 public class TestBase {
     @BeforeEach
     void setUp() {
-        Configuration.browserSize = "1400x3000";
+        Configuration.browserSize = "1024x768";
+        Configuration.browser = "chrome";
+        //Configuration.headless = true;
         open("https://demoqa.com/automation-practice-form");
     }
 
