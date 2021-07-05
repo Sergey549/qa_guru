@@ -39,7 +39,7 @@ public class AlfaBankTests {
         DEPOSIT_WIDGET.click();
         int elements = WIDGETS.size();
         System.out.println("Количество виджетов: " + elements);
-        assertEquals( actualWidgetsQuantity, elements);
+        assertEquals( "Число виджетов отличается",actualWidgetsQuantity, elements);
     }
 
     @Test
@@ -48,7 +48,7 @@ public class AlfaBankTests {
         savingsServices.click();
         savingsServicesText = savingsServices.text();
         System.out.println("Название кнопки: " + savingsServicesText);
-        assertEquals("Сервисы для накоплений", savingsServicesText );
+        assertEquals("Текст кнопки отличается или кликнули в другую кнопку","Сервисы для накоплений", savingsServicesText );
     }
 
     @AfterEach

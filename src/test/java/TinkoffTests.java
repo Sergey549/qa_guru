@@ -31,18 +31,18 @@ public class TinkoffTests {
         PIE.hover();
         String after = TEXT_ELEMENT.text();
         System.out.println("Текст после наведения курсора: " + after);
-        assertEquals("НАЧИСЛЕНИЯ %", after);
+        assertEquals("Тексты не совпадают","НАЧИСЛЕНИЯ %", after);
     }
 
     @Test
     void depositSumSliderMotion(){
         DEPOSITS.click();
         String summaBeforeDrug = SUMMA.getAttribute("value");
-        System.out.println("Сумма до перемещения  слайдера суммы вклада: " + summaBeforeDrug);
+        System.out.println("Сумма до перемещения слайдера суммы вклада: " + summaBeforeDrug);
         actions().dragAndDropBy(DEPOSIT_SUM_SLIDER, 50, 0).perform();
         String summaAfterDrug = SUMMA.getAttribute("value");
-        System.out.println("Сумма после перемещения  слайдера суммы вклада: " + summaAfterDrug);
-        assertEquals("5 655 000", summaAfterDrug);
+        System.out.println("Сумма после перемещения слайдера суммы вклада: " + summaAfterDrug);
+        assertEquals("Суммы не совпадают","5 655 000", summaAfterDrug);
     }
 
     @AfterEach
